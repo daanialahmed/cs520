@@ -87,5 +87,75 @@ public class TriangleTest {
         assertEquals(actual, expected);
     }
 
+    @Test
+    //check a + b <= c 
+    public void test11() {
+        Type actual = Triangle.classify(1, 2, 10);
+        Type expected = INVALID;
+        assertEquals(actual, expected);
+    }
 
+    @Test
+    //check a + c <= b 
+    public void test12() {
+        Type actual = Triangle.classify(1, 10, 2);
+        Type expected = INVALID;
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    //check b + c <= a
+    public void test13() {
+        Type actual = Triangle.classify(10, 1, 2);
+        Type expected = INVALID;
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    //trian == 1 && a + b > c
+    public void test14() {
+        Type actual = Triangle.classify(4, 4, 2);
+        Type expected = ISOSCELES;
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    //trian == 2 && a + c > b
+    public void test15() {
+        Type actual = Triangle.classify(4, 2, 4);
+        Type expected = ISOSCELES;
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    //trian == 3 && b + c > a
+    public void test16() {
+        Type actual = Triangle.classify(2, 4, 4);
+        Type expected = ISOSCELES;
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    //trian == 1 && a + b > c INVALID
+    public void test14() {
+        Type actual = Triangle.classify(100, 100, 1);
+        Type expected = INVALID;
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    //trian == 2 && a + c > b
+    public void test15() {
+        Type actual = Triangle.classify(100, 1, 100);
+        Type expected = INVALID;
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    //trian == 3 && b + c > a
+    public void test16() {
+        Type actual = Triangle.classify(1, 100, 100);
+        Type expected = INVALID;
+        assertEquals(actual, expected);
+    }
 }
