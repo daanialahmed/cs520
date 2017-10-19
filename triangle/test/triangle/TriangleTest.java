@@ -135,27 +135,4 @@ public class TriangleTest {
         assertEquals(actual, expected);
     }
 
-    @Test
-    //trian == 1 && a + b > c INVALID
-    public void test14() {
-        Type actual = Triangle.classify(100, 100, 1);
-        Type expected = INVALID;
-        assertEquals(actual, expected);
-    }
-
-    @Test
-    //trian == 2 && a + c > b
-    public void test15() {
-        Type actual = Triangle.classify(100, 1, 100);
-        Type expected = INVALID;
-        assertEquals(actual, expected);
-    }
-
-    @Test
-    //trian == 3 && b + c > a
-    public void test16() {
-        Type actual = Triangle.classify(1, 100, 100);
-        Type expected = INVALID;
-        assertEquals(actual, expected);
-    }
 }
